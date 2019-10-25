@@ -1,0 +1,22 @@
+{
+  "name": "fan_wall",
+  "version": "1.0.0",
+  "description": "A fan wall to pin digital tickets to.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubracklow/js_crashcourse.git"
+  },
+  "author": "Ute Bracklow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ubracklow/js_crashcourse/issues"
+  },
+  "homepage": "https://github.com/ubracklow/js_crashcourse#readme",
+  "dependencies": {
+    "chalk-animation": "^1.6.0"
+  }
+}

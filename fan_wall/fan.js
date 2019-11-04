@@ -13,7 +13,7 @@ class Fan {
         const text = chalkAnimation.neon('Hi, ' + wall.fan.name + '! My name is ' + this.name + '. Wow - I really like your wall!').render();
         console.log(text);
     }
-    weBothWent(event) {
+    addEvent(event) {
         event.otherAttendees.push(this);
         const text = chalkAnimation.rainbow('Hi, I also went to see this show!').render();
         console.log(text);

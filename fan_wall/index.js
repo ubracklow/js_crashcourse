@@ -17,7 +17,7 @@ wall1.showAllEvents()
 
 // using nmp package to animate console output
 thea.like(wall1)
-thea.weBothWent(event2)
+thea.addEvent(event2)
 
 // saving fans and events to JSON file
 const fans = [ute, thea]

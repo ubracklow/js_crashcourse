@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ubracklow/js_crashcourse#readme",
   "dependencies": {
-    "chalk-animation": "^1.6.0"
+    "chalk-animation": "^1.6.0",
+    "flatted": "^2.0.1"
   }
 }

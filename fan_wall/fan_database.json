@@ -1,1 +1,32 @@
-[["1"],{"name":"2","age":33,"hometown":"3","walls":"4","events":"5","id":2},"Ute","Berlin",[],[]]
+[
+  {
+    "name": "Pam",
+    "age": 22,
+    "hometown": "Paris",
+    "walls": [],
+    "events": [],
+    "id": 3
+  },
+  {
+    "name": "Tim",
+    "age": 33,
+    "hometown": "Cologne",
+    "walls": [],
+    "events": [],
+    "id": 4
+  },
+  {
+    "name": "Ute",
+    "age": 33,
+    "hometown": "Berlin",
+    "walls": [],
+    "events": [],
+    "id": 5
+  },
+  {
+    "name": "Thea",
+    "age": 33,
+    "hometown": "Honululu",
+    "id": 6
+  }
+]

@@ -4,13 +4,13 @@ module.exports = class Wall {
         this.fan = fan;
         this.events = [];
         this.likes = [];
-        this.fan.walls.push(this.name);
         this.id = id
+        this.fan.walls.push(this.id);
         console.log(`A new wall was created for ${fan.name}`);
     }
     
-    static create({name, fan}) {
-        return new Wall(name, fan)
+    static create({name, fan, id}) {
+        return new Wall(name, fan, id)
     }  
     
     showAllEvents() {

@@ -1,0 +1,13 @@
+extend layout
+
+block content
+    if fans
+        h1 Hi Fans and welcome to FanWall!
+        p Your number is #{fans.length}
+        p You are: 
+        ul
+            each f in fans
+                li= f.name
+    else
+        h1 Hi Fan!
+        p Your name is #{fan.name}

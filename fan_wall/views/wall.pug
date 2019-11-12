@@ -1,0 +1,14 @@
+extend layout
+
+block content
+    if walls
+        h1 Here are all the walls Fans have created:
+        p Total number #{walls.length}     
+        ul
+            each w in walls
+                li= w.name 
+    else
+        h1 #{wall.name}
+        p created by #{wall.fan.name}
+        p events on this wall: 
+        p #{wall.events}

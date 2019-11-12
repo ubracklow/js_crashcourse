@@ -1,0 +1,27 @@
+[
+  {
+    "name": "my first ever Britney concert",
+    "date": "June 1999",
+    "location": "Barcelona",
+    "picture": "xxx",
+    "fan": {
+      "name": "Pam",
+      "age": 22,
+      "hometown": "Paris",
+      "walls": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "events": [],
+      "id": 3
+    },
+    "otherAttendees": [],
+    "id": 1
+  }
+]

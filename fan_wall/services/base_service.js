@@ -1,5 +1,4 @@
 const fs = require('fs')
-const Flatted = require('flatted/cjs');
 
 module.exports = class Service {
   constructor(model, dbPath) {
@@ -20,7 +19,7 @@ module.exports = class Service {
           return reject(err)
         }
 
-        const items = Flatted.parse(file).map(this.model.create)
+        const items = JSON.parse(file).map(this.model.create)
 
         resolve(items)
       })
@@ -58,11 +57,17 @@ module.exports = class Service {
 
   async saveAll(items) {
     return new Promise((resolve, reject) => {
-      fs.writeFile(this.dbPath, Flatted.stringify(items), (err, file) => {
+      fs.writeFile(this.dbPath, JSON.stringify(items, null, 2), (err, file) => {
         if (err) return reject(err)
 
         resolve()
       })
     })
+  }
+  async saveAndReplace(object) {
+    const allObjects = await this.findAll()
+    const index = allObjects.findIndex(x => x.id == object.id)
+    allObjects[index] = object
+    await this.saveAll(allObjects)
   }
 }

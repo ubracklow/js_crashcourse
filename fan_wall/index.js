@@ -1,6 +1,6 @@
-const { Fan } = require('./models/fan')
-const { Wall } = require('./models/wall')
-const { Event } = require('./models/event')
+const Fan = require('./models/fan')
+const Wall = require('./models/wall')
+const Event = require('./models/event')
 const Database = require('./database')
 const FanService = require('./services/fan_service')
 const WallService = require('./services/wall_service')
@@ -29,7 +29,7 @@ async function main() {
     console.log(fans.length)
 
 
-    await Fanervice.del(1)
+    await FanService.del(1)
 
     const remainingFans = await FanService.findAll()
   
@@ -40,20 +40,4 @@ async function main() {
 main()
 
 
-
-// // using nmp package to animate console output
-// thea.like(wall1)
-// thea.addEvent(event2)
-
-// // saving fans and events to JSON file
-// const fans = [ute, thea]
-// Database.save('fans.json', fans)
-// events = [event1, event2]
-// Database.save('events.json', events)
-
-// // loading fans and events from JSON file
-// const file_data_fans = Database.load('fans.json')
-// console.log(file_data_fans)
-// const file_data_events = Database.load('events.json')
-// console.log(file_data_events)
  

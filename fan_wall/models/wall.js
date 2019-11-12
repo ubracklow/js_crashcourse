@@ -1,4 +1,4 @@
-class Wall {
+module.exports = class Wall {
     constructor(name, fan, id) {
         this.name = name;
         this.fan = fan;
@@ -17,4 +17,4 @@ class Wall {
         this.events.forEach(printEvent);
     }
 }
-exports.Wall = Wall
+

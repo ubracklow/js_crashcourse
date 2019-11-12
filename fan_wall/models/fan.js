@@ -1,6 +1,6 @@
 const chalkAnimation = require('chalk-animation');
  
-class Fan {
+module.exports = class Fan {
     constructor(name, age, hometown, id) {
         this.name = name;
         this.age = age;
@@ -24,4 +24,3 @@ class Fan {
         console.log(text);
     }
 }
-exports.Fan = Fan

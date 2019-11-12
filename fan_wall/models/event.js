@@ -1,4 +1,4 @@
-class Event {
+module.exports = class Event {
     constructor(name, date, location, picture, fan, id) {
         this.name = name;
         this.date = date;
@@ -24,5 +24,3 @@ class Event {
     }
 }
 printEvent = event => console.log(`Event: ${event.name}, Date: ${event.date}, Location: ${event.location}`)
-
-exports.Event = Event

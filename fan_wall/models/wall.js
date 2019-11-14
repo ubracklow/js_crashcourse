@@ -4,17 +4,17 @@ const WallSchema = new mongoose.Schema({
     name: { 
         type: String, 
         required: true },
-    Fan: {
+    fan: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Fan', 
         required: true
     },
-    Events: [{
+    events: [{
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Event', 
         autopopulate: true
     }],
-    Likes: [{
+    likes: [{
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Fan', 
         autopopulate: true, 

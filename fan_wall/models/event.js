@@ -12,7 +12,7 @@ const EventSchema = new mongoose.Schema({
     picture: { 
         data: Buffer, 
         contentType: String },
-    Fan: {
+    fan: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Fan', 
         require: true,

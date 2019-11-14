@@ -2,9 +2,7 @@ const BaseService = require('./base_service')
 const EventModel = require('../models/event')
 
 class EventService extends BaseService {
-    constructor() {
-        super(EventModel, `${__dirname}/../event_database.json`)
-    }
+    model = EventModel
 }
 
 module.exports = new EventService()

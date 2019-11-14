@@ -1,0 +1,12 @@
+extend layout
+
+block content
+    if events
+        h1 All events on FanWall
+        p Total number: #{events.length}
+        ul
+            each e in events
+                li= e.name
+    else
+        h1 Event
+        p #{event.name}

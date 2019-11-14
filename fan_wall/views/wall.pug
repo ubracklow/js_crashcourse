@@ -7,8 +7,14 @@ block content
         ul
             each w in walls
                 li= w.name 
+                p wall id 
+                li= w.id
+                p by
+                li= w.fan
+                 
     else
         h1 #{wall.name}
         p created by #{wall.fan.name}
         p events on this wall: 
-        p #{wall.events}
+        each e in wall.events
+            p #{e.name}

@@ -23,5 +23,83 @@
     },
     "otherAttendees": [],
     "id": 1
+  },
+  {
+    "name": "my first ever Britney concert",
+    "date": "June 1999",
+    "location": "Barcelona",
+    "picture": "xxx",
+    "fan": {
+      "name": "Thea",
+      "age": 33,
+      "hometown": "Honululu",
+      "walls": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "events": [],
+      "id": 6
+    },
+    "otherAttendees": [],
+    "id": 2
+  },
+  {
+    "name": "Art Festival",
+    "date": "July 2019",
+    "location": "Lake",
+    "picture": "xxx",
+    "fan": {
+      "name": "Thea",
+      "age": 33,
+      "hometown": "Honululu",
+      "walls": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "events": [],
+      "id": 6
+    },
+    "otherAttendees": [],
+    "id": 3
+  },
+  {
+    "name": "Art Festival",
+    "date": "July 2019",
+    "location": "Lake",
+    "picture": "xxx",
+    "fan": {
+      "name": "Thea",
+      "age": 33,
+      "hometown": "Honululu",
+      "walls": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "events": [],
+      "id": 6
+    },
+    "otherAttendees": [],
+    "id": 4
   }
 ]

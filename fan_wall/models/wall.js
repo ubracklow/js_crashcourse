@@ -7,12 +7,14 @@ const WallSchema = new mongoose.Schema({
     fan: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Fan', 
-        required: true
+        required: true,
+        maxDepth: 1
     },
     events: [{
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Event', 
-        autopopulate: true
+        autopopulate: true, 
+        maxDepth: 1
     }],
     likes: [{
         type: mongoose.SchemaTypes.ObjectId,

@@ -16,6 +16,7 @@ const EventSchema = new mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Fan', 
         require: true,
+        maxDepth: 1
     },
     otherAttendees: [{
         type: mongoose.SchemaTypes.ObjectId,

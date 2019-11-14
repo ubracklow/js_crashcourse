@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const FanService = require('../services/fan_service')
+const EventService = require('../services/event_service')
+
 
 router.get('/all', async (req, res) => {
     const fans = await FanService.findAll()

@@ -8,20 +8,28 @@
 **Fans:**
 
 axios.get('/fan/all')
+
 axios.get('/fan/:id')
+
 axios.post('/fan', {name: 'Ute', age: 33, hometown: 'Berlin'})
+
 
 **Walls:**
 
 axios.get('/wall/all')
+
 axios.get('/wall/:id')
+
 axios.post('/wall', {name: 'Things I did last summer', fan: fan_id}) 
 
 **Events:**
 
 axios.get('/event/all')
+
 axios.get('/event/:id')
+
 axios.post('/event', {name: 'My first ever Britney concert', date: '2000-10-19', location: 'Berlin', fan: fan_id})
+
 
 **Interactions:**
 

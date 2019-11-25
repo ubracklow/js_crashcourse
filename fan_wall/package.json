@@ -4,7 +4,8 @@
   "description": "A fan wall to pin digital tickets to.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --verbose --watch",
+    "test-coverage": "nyc ava --verbose"
   },
   "repository": {
     "type": "git",
@@ -25,11 +26,14 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
+    "ava": "^2.4.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^1.7.0"
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "nyc": "^14.1.1",
+    "supertest": "^4.0.2"
   }
 }

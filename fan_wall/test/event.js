@@ -2,6 +2,7 @@ import test from 'ava'
 import request from 'supertest'
 import app from'../app'
  
+
 test('Create new event', async t => {
     t.plan(3)
     const fanData = {

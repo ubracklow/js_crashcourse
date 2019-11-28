@@ -2,6 +2,7 @@ import test from 'ava'
 import request from 'supertest'
 import app from'../app'
 
+
 test('Create new wall', async t => {
     t.plan(3)
     const fanData = {
@@ -38,7 +39,7 @@ test('Get wall', async t => {
 })
 
 test('Delete wall', async t => {
-    t.plan(3)
+    t.plan(2)
     const fanData = {
         name: 'Ute',
         hometown: 'Berlin'

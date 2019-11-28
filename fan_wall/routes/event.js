@@ -6,13 +6,13 @@ const EventService = require('../services/event_service')
 
 router.get('/:id', async (req, res) => {
     const id = req.params.id
-    const event = await eventService.find(id)
+    const event = await EventService.find(id)
     res.render('data', {item: event})
 })
 
 router.get('/:id/json', async (req, res) => {
     const id = req.params.id
-    const event = await eventService.find(id)
+    const event = await EventService.find(id)
     if (!event) res.status(404)
     res.send(event)
 })
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
-    const event = await eventService.del(req.params.id)
+    const event = await EventService.del(req.params.id)
     res.send(event)
 })
 

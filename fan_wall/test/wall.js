@@ -38,6 +38,22 @@ test('Get wall', async t => {
     t.is(res.body.fan, newFan._id)
 })
 
+test('Get all walls', async t => {
+    t.plan(3)
+    const fanData = {
+        name: 'Ute',
+        hometown: 'Berlin'
+    }
+    const newFan = (await request(app).post('/fan').send(fanData)).body
+    const wallData = {
+        name: 'Great shows of 2019', 
+        fan: newFan._id
+    }
+    const newWall = (await request(app).post('/wall').send(wallData)).body
+    const res = await request(app).get('/wall/all')
+    t.is(res.status, 200)
+})
+
 test('Delete wall', async t => {
     t.plan(2)
     const fanData = {

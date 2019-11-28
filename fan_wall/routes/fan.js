@@ -20,8 +20,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.get('/:id/json', async (req, res) => {
-    const id = req.params.id
-    const fan = await FanService.find(id)
+    const fan = await FanService.find(req.params.id)
     if (!fan) res.status(404)
     res.send(fan)
 })

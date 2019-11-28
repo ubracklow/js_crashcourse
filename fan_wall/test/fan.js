@@ -59,6 +59,6 @@ test('Delete fan', async t => {
     const newFan = (await request(app).post('/fan').send(fanData)).body  
     const res = await request(app).delete(`/fan/${newFan._id}`)
     t.is(res.status, 200)
-    const fetchRes = await request(app).get(`/fan/'${newFan._id}`)
+    const fetchRes = await request(app).get(`/fan/${newFan._id}/json`)
     t.is(fetchRes.status, 404)
 })

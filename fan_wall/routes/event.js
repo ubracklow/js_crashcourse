@@ -28,8 +28,7 @@ router.get('/:id/json', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const event = req.body;
-    await EventService.add(event);
+    const event = await EventService.add(req.body);
     res.send(event);
 })
 

@@ -39,7 +39,7 @@ test('Get wall', async t => {
 })
 
 test('Get all walls', async t => {
-    t.plan(3)
+    t.plan(1)
     const fanData = {
         name: 'Ute',
         hometown: 'Berlin'

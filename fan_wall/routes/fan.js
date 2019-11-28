@@ -3,6 +3,16 @@ const router = express.Router()
 const FanService = require('../services/fan_service')
 
 
+router.get('/all', async (req, res) => {
+    const fans = await FanService.findAll()
+    res.render('list', {items: fans})
+  })
+
+router.get('/all/json', async (req, res) => {
+    const fans = await FanService.findAll()
+    res.send(fans)
+  })
+
 router.get('/:id', async (req, res) => {
     const id = req.params.id
     const fan = await FanService.find(id)
@@ -15,16 +25,6 @@ router.get('/:id/json', async (req, res) => {
     if (!fan) res.status(404)
     res.send(fan)
 })
-
-router.get('/all', async (req, res) => {
-    const fans = await FanService.findAll()
-    res.render('list', {items: fans})
-  })
-
-router.get('/all/json', async (req, res) => {
-    const fans = await FanService.findAll()
-    res.send(fans)
-  })
 
 router.post('/', async (req, res) => {
     const fan = await FanService.add(req.body)

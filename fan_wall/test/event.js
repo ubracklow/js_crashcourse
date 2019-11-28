@@ -23,24 +23,22 @@ test('Create new event', async t => {
 })
 
 test('Get event', async t => {
-    t.plan(2)
+    t.plan(3)
     const fanData = {
         name: 'Ute',
         hometown: 'Berlin'
     }
-    const newFan = (await request(app).post('/fan').send(fanData)).body    
+    const newFan = (await request(app).post('/fan').send(fanData)).body
     const eventData = {
-        name: 'My first ever Britney concert', 
-        date: '2000-10-19', 
-        location: 'Berlin', 
-        fan: newFan._id
+        name: 'That show', 
+        fan: newFan._id,
+        date: '2019-10-01'
     }
-    const newEvent = (await request(app).post('/event').send(eventData)).body   
-    const res = await request(app).get(`/event/${newEvent._id}`)
+    const newEvent = (await request(app).post('/event').send(eventData)).body
+    const res = await request(app).get(`/event/${newEvent._id}/json`)
     t.is(res.status, 200)
-
-    const resJson = await request(app).get(`/event/${newEvent._id}/json`)
-    t.is(resJson.body, newEvent)
+    t.is(res.body.name, newEvent.name)
+    t.is(res.body.fan, newFan._id)
 })
 
 test('Get all events', async t => {

@@ -13,8 +13,9 @@ const WallSchema = new mongoose.Schema({
     events: [{
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Event', 
-        autopopulate: true, 
-        maxDepth: 1
+        autopopulate: {
+            maxDepth: 1
+        }
     }],
     likes: [{
         type: mongoose.SchemaTypes.ObjectId,

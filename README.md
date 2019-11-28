@@ -11,7 +11,7 @@ axios.get('/fan/all')
 
 axios.get('/fan/:id')
 
-axios.post('/fan', {name: 'Ute', age: 33, hometown: 'Berlin'})
+axios.post('/fan', {name: 'Ute', hometown: 'Berlin'})
 
 
 **Walls:**

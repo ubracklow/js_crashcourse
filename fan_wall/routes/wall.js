@@ -5,21 +5,30 @@ const FanService = require('../services/fan_service')
 const WallService = require('../services/wall_service')
 const EventService = require('../services/event_service')
 
-router.get('/all', async (req, res) => {
-    const walls = await WallService.findAll();
-    // res.render('wall', { walls: walls });
-    res.render('list', { items: walls });
-})
 
 router.get('/:id', async (req, res) => {
     const wall = await WallService.find(req.params.id)
-    //   res.render('wall', { wall: wall });
     res.render('data', { item: wall });
 })
 
+router.get('/:id/json', async (req, res) => {
+    const wall = await WallService.find(req.params.id)
+    if (!wall) res.status(404)
+    res.send(wall)
+ })
+
+router.get('/all', async (req, res) => {
+    const walls = await WallService.findAll();
+    res.render('list', { items: walls });
+})
+
+router.get('/all/json', async (req, res) => {
+    const walls = await WallService.findAll();
+    res.send(walls)
+})
+
 router.post('/', async (req, res) => {
-    const wall = req.body;
-    await WallService.add(wall);
+    const wall = await WallService.add(req.body);
     res.send(wall);
 })
 

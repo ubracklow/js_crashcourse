@@ -21,8 +21,9 @@ const EventSchema = new mongoose.Schema({
     otherAttendees: [{
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Fan', 
-        autopopulate: true, 
-        maxDepth: 1
+        autopopulate: {
+            maxDepth: 1
+        }
     }]
 })
 

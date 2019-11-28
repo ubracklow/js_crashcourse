@@ -3,27 +3,31 @@ const router = express.Router()
 const FanService = require('../services/fan_service')
 const EventService = require('../services/event_service')
 
+
+router.get('/:id', async (req, res) => {
+    const id = req.params.id
+    const event = await eventService.find(id)
+    res.render('data', {item: event})
+})
+
+router.get('/:id/json', async (req, res) => {
+    const id = req.params.id
+    const event = await eventService.find(id)
+    if (!event) res.status(404)
+    res.send(event)
+})
+
 router.get('/all', async (req, res) => {
     const events = await EventService.findAll()
-    // res.render('event', {events: events})
     res.render('list', {items: events})
   })
+
+router.get('/all/json', async (req, res) => {
+    const events = await EventService.findAll()
+    res.send(events)
+  })
   
-router.get('/:id', async (req, res) => {
-    const id = req.params.id
-    const event = await eventService.find(id)
-    // res.render('event', {event: event})
-    res.render('data', {item: event})
-})
-
-router.get('/:id', async (req, res) => {
-    const id = req.params.id
-    const event = await eventService.find(id)
-    // res.render('event', {event: event})
-    res.render('data', {item: event})
-})
-
-router.post('', async (req, res) => {
+router.post('/', async (req, res) => {
     const event = req.body;
     await EventService.add(event);
     res.send(event);

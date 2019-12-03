@@ -8,7 +8,9 @@ const WallSchema = new mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Fan', 
         required: true,
-        maxDepth: 1
+        autopopulate: {
+            maxDepth: 1
+        }
     },
     events: [{
         type: mongoose.SchemaTypes.ObjectId,

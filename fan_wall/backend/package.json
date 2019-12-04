@@ -24,7 +24,9 @@
     "flatted": "^2.0.1",
     "mongodb-extjson": "^3.0.3",
     "mongoose": "^5.7.10",
-    "mongoose-autopopulate": "^0.9.1"
+    "mongoose-autopopulate": "^0.9.1",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0"
   },
   "devDependencies": {
     "ava": "^2.4.0",
@@ -35,8 +37,6 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "nyc": "^14.1.1",
-    "pug": "^2.0.4",
-    "pug-plain-loader": "^1.0.0",
     "supertest": "^4.0.2"
   }
 }

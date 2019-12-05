@@ -10,9 +10,9 @@ export default {
     img(:src="`http://picsum.photos/300/200?random=${fan._id}`")
     h2 {{ fan.name }} 
     h2 {{ fan._id }}
-    v-if {{ detail }}
-      p I am here
-    router-link(:to="{name: 'fan', params: {id: fan._id, detail: true}}") Go to Fan
+    p(v-if="detail == 'no link'")
+      p I am here 
+    router-link(:to="{name: 'fan', params: {id: fan._id, detail: 'no link'}}") Go to Fan
 </template>
 
 <style scoped>

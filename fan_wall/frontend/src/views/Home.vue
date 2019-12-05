@@ -1,10 +1,14 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<script>
+</script>
+
+<template lang="pug">
+  main
 </template>
 
-<script>
 
-</script>
+<style scoped>
+  main{
+    padding: 40px 0;
+    min-height: 100vh;
+  }
+</style>

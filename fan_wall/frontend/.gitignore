@@ -3,6 +3,7 @@ node_modules
 /dist
 
 # local env files
+.env.development
 .env.local
 .env.*.local
 

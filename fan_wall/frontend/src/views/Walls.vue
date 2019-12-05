@@ -20,6 +20,7 @@ export default {
 
 <template lang="pug">
   main
+      section
       h1 Here you find all walls posted on fan wall
       wall-card(v-for="wall in walls", :wall="wall")
 </template>

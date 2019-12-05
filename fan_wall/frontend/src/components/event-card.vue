@@ -9,7 +9,9 @@ export default {
   article.card 
     img(:src="`http://picsum.photos/300/200?random=${event._id}`")
     h2 {{ event.name }} 
+    h2 {{ event._id }} 
     p {{ event.location }}
+    a(:href="'/event/' + fan._id") Go to Event
 </template>
 
 <style scoped>

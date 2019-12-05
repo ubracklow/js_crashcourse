@@ -3,26 +3,25 @@
 import WallCard from '@/components/wall-card.vue'
 import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'walls',
+  name: 'wall',
   components: {
     WallCard
   },
   computed: {
-    ...mapState(['walls']),
+    ...mapState(['wall']),
   },
   methods: {
-    ...mapActions(['fetchWalls']),
+    ...mapActions(['fetchWall']),
   },
   created() {
-    this.fetchWalls()
+    this.fetchWall(this.$route.params.id)
   }}
 </script>
 
 <template lang="pug">
   main
       section
-        h1 Here you find all walls posted on fan wall
-        wall-card(v-for="wall in walls", :wall="wall")
+        wall-card(:wall="wall")
 </template>
 
 <style scoped>

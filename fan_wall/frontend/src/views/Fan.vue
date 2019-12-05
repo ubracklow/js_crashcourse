@@ -1,28 +1,27 @@
 <script>
 // @ is an alias to /src
-import WallCard from '@/components/wall-card.vue'
+import FanCard from '@/components/fan-card.vue'
 import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'walls',
+  name: 'fan',
   components: {
-    WallCard
+    FanCard
   },
   computed: {
-    ...mapState(['walls']),
+    ...mapState(['fan']),
   },
   methods: {
-    ...mapActions(['fetchWalls']),
+    ...mapActions(['fetchFan']),
   },
   created() {
-    this.fetchWalls()
+    this.fetchFan(this.$route.params.id)
   }}
 </script>
 
 <template lang="pug">
   main
       section
-        h1 Here you find all walls posted on fan wall
-        wall-card(v-for="wall in walls", :wall="wall")
+        fan-card(:fan="fan")
 </template>
 
 <style scoped>

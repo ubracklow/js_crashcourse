@@ -20,17 +20,17 @@ export default new Vuex.Store({
   },
   actions: {
     async fetchEvents({commit}){
-      const result = await axios.get('process.env.VUE_APP_API_URL/event/all/json')
+      const result = await axios.get(`${process.env.VUE_APP_API_URL}/event/all/json`)
       commit('SET_EVENTS', result.data)
       console.log(result)
     },
     async fetchWalls({commit}){
-      const result = await axios.get('process.env.VUE_APP_API_URL/wall/all/json')
+      const result = await axios.get(`${process.env.VUE_APP_API_URL}/wall/all/json`)
       commit('SET_WALLS', result.data)
       console.log(result)
     },
     async fetchFans({commit}){
-      const result = await axios.get('process.env.VUE_APP_API_URL/fan/all/json')
+      const result = await axios.get(`${process.env.VUE_APP_API_URL}/fan/all/json`)
       commit('SET_FANS', result.data)
       console.log(result)
     },

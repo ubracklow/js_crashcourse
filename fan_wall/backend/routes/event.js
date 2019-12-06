@@ -37,6 +37,15 @@ router.delete('/:id', async (req, res) => {
     res.send(event)
 })
 
+// get events for a fan
+
+router.get('/by-fan/:id/json', async (req, res) => {
+    const fan_id = req.params.id
+    const events = await EventService.findByFan(fan_id)
+    // if (!events) res.status(404)
+    res.send(events)
+})
+
 // fan attends event
 
 router.post('/:id/attend', async (req, res) => {

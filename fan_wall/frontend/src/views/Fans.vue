@@ -13,7 +13,7 @@ export default {
   methods: {
     ...mapActions(['fetchFans']),
   },
-  created() {
+  mounted() {
     this.fetchFans()
   }}
 </script>

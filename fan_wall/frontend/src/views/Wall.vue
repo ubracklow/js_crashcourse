@@ -13,7 +13,7 @@ export default {
   methods: {
     ...mapActions(['fetchWall']),
   },
-  created() {
+  mounted() {
     this.fetchWall(this.$route.params.id)
   }}
 </script>

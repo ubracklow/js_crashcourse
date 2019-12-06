@@ -8,6 +8,10 @@ class EventService extends BaseService {
         event.otherAttendees.push(fan)
         await event.save()
     }
+    async findByFan(fan) {
+        const events = await EventModel.find({fan: fan})
+        return events
+    }
 }
 
 module.exports = new EventService()

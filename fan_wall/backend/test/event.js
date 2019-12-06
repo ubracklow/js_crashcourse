@@ -89,3 +89,21 @@ test('Delete an event', async t => {
     const fetchJson = await request(app).get(`/event/${newEvent._id}/json`)
     t.is(fetchJson.status, 404)
 })
+
+test('Get events for fan', async t => {
+    t.plan(2)
+    const fanData = {
+        name: 'Ute',
+        hometown: 'Berlin'
+    }
+    const newFan = (await request(app).post('/fan').send(fanData)).body
+    const eventData = {
+        name: 'That show', 
+        fan: newFan._id,
+        date: '2019-10-01'
+    }
+    const newEvent = (await request(app).post('/event').send(eventData)).body
+    const res = await request(app).get(`/event/by-fan/${newFan._id}/json`)
+    t.is(res.status, 200)
+    t.is(res.body[0].name, newEvent.name)
+})

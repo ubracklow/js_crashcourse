@@ -13,7 +13,7 @@ export default {
   methods: {
     ...mapActions(['fetchWalls']),
   },
-  created() {
+  mounted() {
     this.fetchWalls()
   }}
 </script>

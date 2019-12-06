@@ -13,7 +13,7 @@ export default {
   methods: {
     ...mapActions(['fetchEvent']),
   },
-  created() {
+  mounted() {
     this.fetchEvent(this.$route.params.id)
   }}
 </script>

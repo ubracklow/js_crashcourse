@@ -13,7 +13,7 @@ export default {
   methods: {
     ...mapActions(['fetchEvents']),
   },
-  created() {
+  mounted() {
     this.fetchEvents()
   }}
 </script>

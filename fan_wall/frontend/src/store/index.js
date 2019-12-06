@@ -14,6 +14,9 @@ export default new Vuex.Store({
     SET_EVENT(state, data) {
       state.event = data
     },
+    SET_FAN_EVENTS(state, data) {
+      state.fanEvents = data
+    },
     SET_WALLS(state, data) {
       state.walls = data
     },
@@ -36,6 +39,11 @@ export default new Vuex.Store({
     async fetchEvent({commit}, id){
       const result = await axios.get(`${process.env.VUE_APP_API_URL}/event/${id}/json`)
       commit('SET_EVENT', result.data)
+      console.log(result)
+    },
+    async fetchEventsForFan({commit}, id){
+      const result = await axios.get(`${process.env.VUE_APP_API_URL}/event/by-fan/${id}/json`)
+      commit('SET_FAN_EVENTS', result.data)
       console.log(result)
     },
     async fetchWalls({commit}){

@@ -1,7 +1,7 @@
 <script>
 export default {
   name: 'FanCard',
-  props: ['fan', 'detail']
+  props: ['fan']
 }
 </script>
 
@@ -9,10 +9,7 @@ export default {
   article.card 
     img(:src="`http://picsum.photos/300/200?random=${fan._id}`")
     h2 {{ fan.name }} 
-    h2 {{ fan._id }}
-    p(v-if="detail == 'no link'")
-      p I am here 
-    router-link(:to="{name: 'fan', params: {id: fan._id, detail: 'no link'}}") Go to Fan
+    h2 from {{ fan.hometown }}
 </template>
 
 <style scoped>
@@ -25,5 +22,6 @@ export default {
   border-radius: 3px;
   min-width: 200px;
   background:rgba(255,255,255,0.25);
+  color: #b12183;
 }
 </style>

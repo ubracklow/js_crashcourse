@@ -21,14 +21,19 @@ export default {
   }}
 </script>
 
+
 <template lang="pug">
   main
       section
-        p Meet the fan
+        H1 Meet the fan
         fan-card(:fan="fan")
       section
-        p This fan has the following events:
-        event-card(v-for="event in fanEvents", :event="event")
+        if fanEvents
+            H1 This fan has the following events:
+            event-card(v-for="event in fanEvents", :event="event")
+        else
+            p This fan has not yet posted events
+
 
 </template>
 
@@ -36,5 +41,7 @@ export default {
   section {
     padding: 40px 0;
     min-height: 100vh;
+    color: #eeee14
   }
+
 </style>

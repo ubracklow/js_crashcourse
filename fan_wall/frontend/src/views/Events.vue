@@ -1,11 +1,11 @@
 <script>
 // @ is an alias to /src
-import EventCard from '@/components/event-card.vue'
+import EventCardList from '@/components/event-card-list.vue'
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'events',
   components: {
-    EventCard
+    EventCardList
   },
   computed: {
     ...mapState(['events']),
@@ -20,9 +20,9 @@ export default {
 
 <template lang="pug">
   main
-    section 
-      h1 Here you find all events posted on fan wall
-      event-card(v-for="event in events", :event="event")
+      section
+        h1 Here you find all events posted on fan wall
+        event-card-list(v-for="event in events", :event="event")
 </template>
 
 <style scoped>

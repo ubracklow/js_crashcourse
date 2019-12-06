@@ -1,16 +1,15 @@
 <script>
 export default {
-  name: 'EventCard',
-  props: ['event']
+  name: 'FanCardList',
+  props: ['fan']
 }
 </script>
 
 <template lang="pug">
   article.card 
-    img(:src="`http://picsum.photos/300/200?random=${event._id}`")
-    h2 {{ event.name }} 
-    p {{ event.fan.name }} went to see the event on 
-    p {{ event.date }}
+    img(:src="`http://picsum.photos/300/200?random=${fan._id}`")
+    h2 {{ fan.name }} 
+    router-link(:to="{name: 'fan', params: {id: fan._id}}") Go to Fan
 </template>
 
 <style scoped>

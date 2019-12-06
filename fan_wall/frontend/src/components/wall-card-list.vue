@@ -1,22 +1,22 @@
 <script>
 export default {
-  name: 'EventCard',
-  props: ['event']
+  name: 'WallCardList',
+  props: ['wall']
 }
 </script>
 
 <template lang="pug">
   article.card 
-    img(:src="`http://picsum.photos/300/200?random=${event._id}`")
-    h2 {{ event.name }} 
-    p {{ event.fan.name }} went to see the event on 
-    p {{ event.date }}
+    h2 {{ wall.name }} 
+    h2 {{ wall._id }} 
+    p created by {{ wall.fan.name }}
+    a(:href="'/wall/' + wall._id") Go to Wall
 </template>
 
 <style scoped>
 .card {
   display: inline-block;
-  text-align: center;
+  text-align: left;
   padding: 20px;
   border: 1px solid #ddd;
   margin: 20px;

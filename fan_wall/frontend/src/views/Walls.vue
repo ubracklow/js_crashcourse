@@ -1,11 +1,11 @@
 <script>
 // @ is an alias to /src
-import WallCard from '@/components/wall-card.vue'
+import WallCardList from '@/components/wall-card-list.vue'
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'walls',
   components: {
-    WallCard
+    WallCardList
   },
   computed: {
     ...mapState(['walls']),
@@ -22,7 +22,7 @@ export default {
   main
       section
         h1 Here you find all walls posted on fan wall
-        wall-card(v-for="wall in walls", :wall="wall")
+        wall-card-list(v-for="wall in walls", :wall="wall")
 </template>
 
 <style scoped>

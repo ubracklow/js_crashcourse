@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'EventCard',
+  name: 'EventCardList',
   props: ['event']
 }
 </script>
@@ -9,14 +9,14 @@ export default {
   article.card 
     img(:src="`http://picsum.photos/300/200?random=${event._id}`")
     h2 {{ event.name }} 
-    p {{ event.fan.name }} went to see the event on 
-    p {{ event.date }}
+    h2 {{ event._id }} 
+    a(:href="'/event/' + event._id") Go to Event
 </template>
 
 <style scoped>
 .card {
   display: inline-block;
-  text-align: center;
+  text-align: left;
   padding: 20px;
   border: 1px solid #ddd;
   margin: 20px;

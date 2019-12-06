@@ -38,7 +38,7 @@ test('Get event', async t => {
     const res = await request(app).get(`/event/${newEvent._id}/json`)
     t.is(res.status, 200)
     t.is(res.body.name, newEvent.name)
-    t.is(res.body.fan, newFan._id)
+    t.deepEqual(res.body.fan, newFan)
 })
 
 test('Get all events', async t => {

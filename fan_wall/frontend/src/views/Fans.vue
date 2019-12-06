@@ -1,11 +1,11 @@
 <script>
 // @ is an alias to /src
-import FanCard from '@/components/fan-card.vue'
+import FanCardList from '@/components/fan-card-list.vue'
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'fans',
   components: {
-    FanCard
+    FanCardList
   },
   computed: {
     ...mapState(['fans']),
@@ -22,7 +22,7 @@ export default {
   main
       section
         h1 Meet the Fans
-        fan-card(v-for="fan in fans", :fan="fan")
+        fan-card-list(v-for="fan in fans", :fan="fan")
 </template>
 
 <style scoped>

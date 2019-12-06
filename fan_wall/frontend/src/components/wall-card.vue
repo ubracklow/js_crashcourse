@@ -8,7 +8,7 @@ export default {
 <template lang="pug">
   article.card 
     h2 {{ wall.name }} 
-    p {{ wall.fan.name }}
+    p by {{ wall.fan.name }}
 </template>
 
 <style scoped>

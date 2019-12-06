@@ -1,13 +1,13 @@
 <script>
 // @ is an alias to /src
 import FanCard from '@/components/fan-card.vue'
-import EventCard from '@/components/event-card.vue'
+import EventCardList from '@/components/event-card-list.vue'
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'fan',
   components: {
     'fan-card': FanCard,
-    'event-card': EventCard
+    'event-card-list': EventCardList
   },
   computed: {
     ...mapState(['fan', 'fanEvents']),
@@ -28,11 +28,9 @@ export default {
         H1 Meet the fan
         fan-card(:fan="fan")
       section
-        if fanEvents
-            H1 This fan has the following events:
-            event-card(v-for="event in fanEvents", :event="event")
-        else
-            p This fan has not yet posted events
+        p {{ fan.name }} posted these events
+        event-card-list(v-for="event in fanEvents", :event="event")
+
 
 
 </template>

@@ -21,5 +21,6 @@ export default {
   border-radius: 3px;
   min-width: 200px;
   background:rgba(255,255,255,0.25);
+  color: #b12183;
 }
 </style>

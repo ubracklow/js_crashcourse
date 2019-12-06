@@ -6,6 +6,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+      fans: [],
+      fan: {},
+      events: [],
+      fanEvents: false,
+      event: {},
+      walls: [],
+      wall: {},
   },
   mutations: {
     SET_EVENTS(state, data) {

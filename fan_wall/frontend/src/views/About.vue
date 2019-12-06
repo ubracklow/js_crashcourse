@@ -24,7 +24,4 @@
   #intro h1 {
     color: #eeee14
   }
-  #sub {
-
-  }
 </style>

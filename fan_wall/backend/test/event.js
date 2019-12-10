@@ -107,3 +107,24 @@ test('Get events for fan', async t => {
     t.is(res.status, 200)
     t.is(res.body[0].name, newEvent.name)
 })
+
+test('Add attendee to event', async t => {
+    // for now a new fan should be created and added as attendee
+    t.plan(3)
+    const fanData = {
+        name: 'Ute',
+        hometown: 'Berlin'
+    }
+    const newFan = (await request(app).post('/fan').send(fanData)).body
+    const eventData = {
+        name: 'That show', 
+        fan: newFan._id,
+        date: '2019-10-01'
+    }
+    const newEvent = (await request(app).post('/event').send(eventData)).body
+    const res = await request(app).post(`/event/${newEvent._id}/attend`)
+    t.is(res.status, 200)
+    t.is(res.body.name, newEvent.name)
+    t.is(res.body.otherAttendees[0].name, 'Superfan')
+
+})

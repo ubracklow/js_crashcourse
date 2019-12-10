@@ -8,7 +8,6 @@ export default {
 <template lang="pug">
   article.card 
     h2 {{ wall.name }} 
-    h2 {{ wall._id }} 
     p created by {{ wall.fan.name }}
     a(:href="'/wall/' + wall._id") Go to Wall
 </template>

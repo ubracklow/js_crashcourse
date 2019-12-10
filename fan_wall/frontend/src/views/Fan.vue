@@ -27,19 +27,21 @@ export default {
       section
         H1 Meet the fan
         fan-card(:fan="fan")
-      section
-        if fanEvents === []
-            h3 {{ fan.name }} has not yet posted events
-
-        else
-            h3 {{ fan.name }} posted these events
+        h3(v-if="fanEvents.length") {{ fan.name }} posted these events
+            p
             event-card-list(v-for="event in fanEvents", :event="event")
+        h3(v-else) {{ fan.name }} has not yet posted events      
 </template>
 
 <style scoped>
+
   section {
-    padding: 10px 0;
-    color: #eeee14
+    color: #eeee14; 
+    min-height: 100vh;
+  }
+  event-section {
+    padding: 40px 0;
+    min-height: 100vh;
   }
 
 </style>

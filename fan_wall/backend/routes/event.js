@@ -50,9 +50,12 @@ router.get('/by-fan/:id/json', async (req, res) => {
 
 router.post('/:id/attend', async (req, res) => {
     const event = await EventService.find(req.params.id)
-    const fan = await FanService.find(req.body['fan'])
+    // for now it creates a new fan and adds this as attendee
+    // const fan = await FanService.find(req.body['fan'])
+    const fan = await FanService.add({name: 'Superfan', hometown: 'NYC'})
     await EventService.addAttendee(event, fan)
-    res.send(event)
+    const updated = await EventService.find(event._id)
+    res.send(updated)
 })
 
 module.exports = router

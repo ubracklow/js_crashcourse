@@ -10,7 +10,7 @@ export default {
     img(:src="`http://picsum.photos/300/200?random=${event._id}`")
     h2 {{ event.name }} 
     p {{ event.fan.name }} went to see the event on 
-    p {{ event.date }}
+    p {{ event.date }} 
 </template>
 
 <style scoped>

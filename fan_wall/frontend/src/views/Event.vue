@@ -13,7 +13,7 @@ export default {
     ...mapState(['event']),
   },
   methods: {
-    ...mapActions(['fetchEvent']),
+    ...mapActions(['fetchEvent', 'attendEvent']),
   },
   mounted() {
     this.fetchEvent(this.$route.params.id)
@@ -28,7 +28,8 @@ export default {
         h3(v-if="event.otherAttendees.length") 
             h3 other Attendees
             attendee-element(v-for="attendee in event.otherAttendees", :attendee="attendee")
-        //- router-link(:to="{name: 'attend', params: {id: fan._id}}") I also went to see the show!
+        button.attend-button(@click="attendEvent(event._id)") I also went to this event
+
 </template>
 
 <style scoped>
@@ -39,4 +40,8 @@ export default {
     min-height: 100vh;
     color: #eeee14
   }
+  .attend-button:hover {
+  background-color: darkcyan;
+  color: white;
+}
 </style>

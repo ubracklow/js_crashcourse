@@ -9,8 +9,8 @@ export default {
   article.card 
     img(:src="`http://picsum.photos/300/200?random=${event._id}`")
     h2 {{ event.name }} 
-    p {{ event.fan.name }} went to see the event on 
-    p {{ event.date }} 
+    p {{ event.fan.name }} attended the event on 
+    p {{ moment(event.date).format('MM-DD-YYYY') }} 
 </template>
 
 <style scoped>

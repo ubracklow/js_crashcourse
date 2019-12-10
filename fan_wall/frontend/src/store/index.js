@@ -48,9 +48,9 @@ export default new Vuex.Store({
       commit('SET_EVENT', result.data)
       console.log(result)
     },    
-    async attendEvent(id){
-      await axios.post(`${process.env.VUE_APP_API_URL}/event/${id}/attend`)
-      console.log('success')
+    async attendEvent({commit}, id){
+      const result = await axios.post(`${process.env.VUE_APP_API_URL}/event/${id}/attend`)
+      commit('SET_EVENT', result.data)
     },
     async fetchEventsForFan({commit}, id){
       const result = await axios.get(`${process.env.VUE_APP_API_URL}/event/by-fan/${id}/json`)

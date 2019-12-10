@@ -26,9 +26,9 @@ export default {
         event-card(:event="event")
       #attendee-section  
         h3(v-if="event.otherAttendees.length") 
-            h3 other Attendees
+            h2 Hey, I also went to this event! 
             attendee-element(v-for="attendee in event.otherAttendees", :attendee="attendee")
-        button.attend-button(@click="attendEvent(event._id)") I also went to this event
+        button.attend-button(@click="attendEvent(event._id)") Add me to the list
 
 </template>
 
@@ -40,8 +40,22 @@ export default {
     min-height: 100vh;
     color: #eeee14
   }
-  .attend-button:hover {
-  background-color: darkcyan;
-  color: white;
+  .attend-button {
+  background:rgba(255,255,255,0.25);
+  color: #eeee14;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #eeee14;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.attend-button:hover {
+  background-color: #eeee14;
+  color: #b12183;
 }
 </style>

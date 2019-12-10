@@ -7,7 +7,9 @@ export default {
 
 <template lang="pug">
   article.card 
-    h2 {{ attendee.name }} from {{ attendee.hometown }} ⭐️
+    p ⭐️ 
+    h3 {{ attendee.name }} from {{ attendee.hometown }} 
+    router-link(:to="{name: 'fan', params: {id: attendee._id}}") Go to Fan
 </template>
 
 <style scoped>
